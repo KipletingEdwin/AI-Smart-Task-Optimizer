@@ -17,9 +17,24 @@ export const TaskCard = ({task, onToggleSub, onDelete}) => {
 
 
   return (
-    <div>TaskCard</div>
+    <div>
+      <div>
+        <p>{task.category || "General"}</p>
+      </div>
+      
+    </div>
   )
 }
 
 
 
+
+      // <div className="flex items-start justify-between gap-4">
+      //   <div>
+      //     <p className="text-[11px] uppercase tracking-[0.2em] text-neutral-400">{task.category || "General"}</p>
+      //     <h3 className="mt-1 font-heading text-xl leading-snug text-neutral-900">{task.title}</h3>
+      //   </div>
+      //   <button onClick={onDelete} className="text-neutral-300 transition-colors hover:text-rose-500">
+      //     <Trash2 className="h-4 w-4" />
+      //   </button>
+      // </div>
