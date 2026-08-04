@@ -21,7 +21,7 @@ export const TaskCard = ({task, onToggleSub, onDelete}) => {
     <div className='flex items-start justify-between gap-4'>
       <div>
         <p className='text-[11px] uppercase tracking-[0.2rem] text-neutral-400'>{task.category || "General"}</p>
-        <h3>{task.title}</h3>
+        <h3 className='mt-1 font-heading text-xl leading-snug text-neutral-900'>{task.title}</h3>
       </div>
       <button>
         <Trash2 />
