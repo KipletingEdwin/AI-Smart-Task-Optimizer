@@ -15,6 +15,10 @@ export const Home = () => {
         console.log("Generate")
     }
 
+    const toggleSub = () => {
+        console.log("You have toggled")
+    }
+
      
 
   return (
@@ -47,6 +51,8 @@ export const Home = () => {
                                     <TaskCard 
                                     key={task.id}
                                     task={task}
+                                    onToggleSub={(i) => toggleSub(task, i)}
+                                    onDelete={() => remove(task)}
                                     ></TaskCard>
                                 ))
                             }
@@ -58,7 +64,6 @@ export const Home = () => {
     </div>
   )
 }
-
 
 
     // <div className="min-h-screen bg-[#FAFAF8]">
