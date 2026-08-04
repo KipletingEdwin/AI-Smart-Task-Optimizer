@@ -13,13 +13,6 @@ export const TaskCard = ({task, onToggleSub, onDelete}) => {
   const doneCount = subtasks.filter((s) => s.done).length;
   const progress = subtasks.length ? (doneCount / subtasks.length) * 100 : 0;
 
-
-
-
-
-  //   const subtasks = task.subtasks || [];
-  // const doneCount = subtasks.filter((s) => s.done).length;
-  // const progress = subtasks.length ? (doneCount / subtasks.length) * 100 : 0;
   
 
 
