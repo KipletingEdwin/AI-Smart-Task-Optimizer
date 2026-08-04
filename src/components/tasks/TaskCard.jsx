@@ -1,4 +1,5 @@
 
+import { Trash2 } from 'lucide-react';
 import React from 'react'
 
   const priorityStyles = {
@@ -20,7 +21,11 @@ export const TaskCard = ({task, onToggleSub, onDelete}) => {
     <div>
       <div>
         <p>{task.category || "General"}</p>
+        <h3>{task.title}</h3>
       </div>
+      <button>
+        <Trash2 />
+      </button>
       
     </div>
   )
