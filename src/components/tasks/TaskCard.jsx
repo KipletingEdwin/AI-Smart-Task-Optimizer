@@ -20,7 +20,7 @@ export const TaskCard = ({task, onToggleSub, onDelete}) => {
   return (
     <div className='flex items-start justify-between gap-4'>
       <div>
-        <p>{task.category || "General"}</p>
+        <p className='text-[11px] uppercase tracking-[0.2rem] text-neutral-400'>{task.category || "General"}</p>
         <h3>{task.title}</h3>
       </div>
       <button>
