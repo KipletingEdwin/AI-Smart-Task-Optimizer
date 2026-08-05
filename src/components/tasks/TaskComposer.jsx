@@ -1,10 +1,30 @@
 
-import React from 'react'
+import React, { useState } from 'react'
 
-export const TaskComposer = () => {
+export const TaskComposer = ({ onGenerate, loading }) => {
+
+  const [text, setText] = useState("");
+
+  const submit = () => { 
+    if (!text.trim() || loading) return;
+    await onGenerate(text.trim());
+    setText("");
+  };
+
+
   return (
     <div className='rounded-3xl border border-b-neutral-200 bg-white p-6 shadow-[0_1px_40px_-20px_rgba(0,0,0,0.35)] transition-shadow hover:shadow-[0_1px_60px_-24px_rgba(0,0,0,0.4)]'>
-      TaskComposer
+      <textarea>
+
+      </textarea>
+      <div>
+        <span> + Enter</span>
+        <button>
+
+        </button>
+      </div>
+
+      
     </div>
   )
 }
