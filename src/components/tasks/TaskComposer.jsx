@@ -24,7 +24,7 @@ export const TaskComposer = ({ onGenerate, loading }) => {
 
       <div className='mt-4 flex items-center justify-between'>
         <span className='text-sm uppercase tracking-[0.18rem] text-neutral-400'> + Enter</span>
-        <button>
+        <button className='rounded-full px-6'>
           {  loading ? <Loader2 /> : <Sparkles /> }
           { loading ? "Thinking" : "Break it down" }
 
