@@ -2,6 +2,7 @@
 import { Loader2, Sparkles } from 'lucide-react';
 import React, { useState } from 'react'
 import { Textarea } from '../ui/Textarea';
+import { Button } from '../ui/button';
 
 export const TaskComposer = ({ onGenerate, loading }) => {
 
@@ -27,12 +28,17 @@ export const TaskComposer = ({ onGenerate, loading }) => {
       <Textarea />
 
       <div className='mt-4 flex items-center justify-between'>
-        <span className='text-sm uppercase tracking-[0.18rem] text-neutral-400'> + Enter</span>
-        <button className='rounded-full px-6'>
+        <span className='text-sm uppercase tracking-[0.18rem] text-neutral-400'> + Enter</span> 
+
+
+        {/* <button className='rounded-full px-6'>
           {  loading ? <Loader2 className='mr-2 h-4 w-4 animate-spin'/> : <Sparkles className='mr-2 h-4 w-4'/> }
           { loading ? "Thinking" : "Break it down" }
+        </button> */}
 
-        </button>
+        <Button />
+
+
       </div>
 
       
