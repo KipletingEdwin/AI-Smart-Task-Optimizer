@@ -11,7 +11,6 @@ export const Home = () => {
     const [tasks, setTasks] = useState([]);
     const [fetching, setFetching] = useState(true);
 
-
     const generate = async (input) => {
         console.log("Generate")
     }
@@ -20,7 +19,6 @@ export const Home = () => {
         console.log("You have toggled")
     }
 
-     
 
   return (
     <div className='min-h-screen bg-[#FAFAF8]'>

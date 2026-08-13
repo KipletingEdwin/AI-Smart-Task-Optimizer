@@ -8,8 +8,6 @@ import { ForgotPassword } from "./pages/ForgotPassword";
 import { PageNotFound } from "./pages/PageNotFound";
 
 function App() {
-
-
   return (
     <Routes>
       <Route path="/" element={<Home />} />
@@ -17,16 +15,9 @@ function App() {
       <Route path="/register" element={<Register />} />
       <Route path="/reset-password" element={<ResetPassword />} />
       <Route path="/forgot-passsword" element={<ForgotPassword />} />
-      <Route path="*" element={<PageNotFound />}/>
-
+      <Route path="*" element={<PageNotFound />} />
     </Routes>
-
   );
 }
 
 export default App;
-
-
-
-
-//  <Route path="/" element={<Home />} />
