@@ -52,16 +52,6 @@ export const TaskComposer = ({ onGenerate, loading }) => {
 
 
 
-
-//   return (
-//     <div className="rounded-3xl border border-neutral-200 bg-white p-6 shadow-[0_1px_40px_-20px_rgba(0,0,0,0.35)] transition-shadow hover:shadow-[0_1px_60px_-24px_rgba(0,0,0,0.4)]">
-//       <Textarea
-//         value={text}
-//         onChange={(e) => setText(e.target.value)}
-//         onKeyDown={(e) => { if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) submit(); }}
-//         placeholder="I need to prepare for my Rails interview on Friday…"
-//         className="min-h-[96px] resize-none border-0 p-0 text-lg leading-relaxed shadow-none focus-visible:ring-0"
-//       />
 //       <div className="mt-4 flex items-center justify-between">
 //         <span className="text-xs uppercase tracking-[0.18em] text-neutral-400">⌘ + Enter</span>
 //         <Button onClick={submit} disabled={loading || !text.trim()} className="rounded-full px-6">
