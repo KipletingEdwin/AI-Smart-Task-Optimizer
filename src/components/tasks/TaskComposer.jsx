@@ -50,15 +50,3 @@ export const TaskComposer = ({ onGenerate, loading }) => {
   )
 }
 
-
-
-//       <div className="mt-4 flex items-center justify-between">
-//         <span className="text-xs uppercase tracking-[0.18em] text-neutral-400">⌘ + Enter</span>
-//         <Button onClick={submit} disabled={loading || !text.trim()} className="rounded-full px-6">
-//           {loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Sparkles className="mr-2 h-4 w-4" />}
-//           {loading ? "Thinking" : "Break it down"}
-//         </Button>
-//       </div>
-//     </div>
-//   );
-// }
