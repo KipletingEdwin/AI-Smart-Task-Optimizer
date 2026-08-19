@@ -27,7 +27,7 @@ export const TaskComposer = ({ onGenerate, loading }) => {
 
       <Textarea 
       placeholder="I need to prepare for my Rails interview on Friday…"
-      className="min-h-24 resize-none border-0   "
+      className="min-h-24 resize-none border-0 p-0   "
     
       />
 
