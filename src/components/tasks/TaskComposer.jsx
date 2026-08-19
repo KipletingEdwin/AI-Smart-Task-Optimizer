@@ -53,16 +53,6 @@ export const TaskComposer = ({ onGenerate, loading }) => {
 
 
 
-
-// export default function TaskComposer({ onGenerate, loading }) {
-//   const [text, setText] = useState("");
-
-//   const submit = async () => {
-//     if (!text.trim() || loading) return;
-//     await onGenerate(text.trim());
-//     setText("");
-//   };
-
 //   return (
 //     <div className="rounded-3xl border border-neutral-200 bg-white p-6 shadow-[0_1px_40px_-20px_rgba(0,0,0,0.35)] transition-shadow hover:shadow-[0_1px_60px_-24px_rgba(0,0,0,0.4)]">
 //       <Textarea
