@@ -52,10 +52,7 @@ export const TaskComposer = ({ onGenerate, loading }) => {
 
 
 
-// import React, { useState } from "react";
-// import { Sparkles, Loader2 } from "lucide-react";
-// import { Button } from "@/components/ui/button";
-// import { Textarea } from "@/components/ui/textarea";
+
 
 // export default function TaskComposer({ onGenerate, loading }) {
 //   const [text, setText] = useState("");
