@@ -25,7 +25,10 @@ export const TaskComposer = ({ onGenerate, loading }) => {
       >
       </textarea> */}
 
-      <Textarea />
+      <Textarea 
+      placeholder="I need to prepare for my Rails interview on Friday…"
+    
+      />
 
       <div className='mt-4 flex items-center justify-between'>
         <span className='text-sm uppercase tracking-[0.18rem] text-neutral-400'> + Enter</span> 
