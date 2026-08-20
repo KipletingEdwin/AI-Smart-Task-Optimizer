@@ -34,8 +34,9 @@ export const TaskComposer = ({ onGenerate, loading }) => {
         </button> */}
 
         <Button
-        onClick={submit} disabled={}
+        onClick={submit} disabled={loading || !text.trim()}
         className="rounded-full px-6"
+        { loading ? <Loader2 /> : <Sparkles />   }
          />
 
 
