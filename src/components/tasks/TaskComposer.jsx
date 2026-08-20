@@ -33,7 +33,10 @@ export const TaskComposer = ({ onGenerate, loading }) => {
           { loading ? "Thinking" : "Break it down" }
         </button> */}
 
-        <Button />
+        <Button
+        onClick={submit} disabled={}
+        className="rounded-full px-6"
+         />
 
 
       </div>
