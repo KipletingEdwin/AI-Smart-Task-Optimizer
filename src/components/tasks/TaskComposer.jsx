@@ -18,13 +18,6 @@ export const TaskComposer = ({ onGenerate, loading }) => {
   return (
     <div className='rounded-3xl border border-b-neutral-200 bg-white p-6 shadow-[0_1px_40px_-20px_rgba(0,0,0,0.35)] transition-shadow hover:shadow-[0_1px_60px_-24px_rgba(0,0,0,0.4)]'>
 
-      {/* <textarea
-      value={text}
-      placeholder='I need to prepare for my Rails interview on Friday…'
-      className='min-h-24 resize-none border-0 p-0 text-lg leading-relaxed shadow-none focus-visible:ring-0'
-      >
-      </textarea> */}
-
       <Textarea 
       placeholder="I need to prepare for my Rails interview on Friday…"
       className="min-h-24 resize-none border-0 p-0 text-lg leading-relaxed shadow-none focus-visible:ring-0  "
