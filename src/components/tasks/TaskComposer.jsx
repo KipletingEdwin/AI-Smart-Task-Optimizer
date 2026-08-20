@@ -25,7 +25,7 @@ export const TaskComposer = ({ onGenerate, loading }) => {
       />
 
       <div className='mt-4 flex items-center justify-between'>
-        <span className='text-sm uppercase tracking-[0.18rem] text-neutral-400'> + Enter</span> 
+        <span className='text-sm uppercase tracking-[0.18rem] text-neutral-400'>⌘ + Enter</span> 
 
 
         {/* <button className='rounded-full px-6'>
@@ -43,4 +43,7 @@ export const TaskComposer = ({ onGenerate, loading }) => {
   )
 }
 
-// className="min-h-[96px] resize-none border-0 p-0 text-lg leading-relaxed shadow-none focus-visible:ring-0"
+        // <Button onClick={submit} disabled={loading || !text.trim()} className="rounded-full px-6">
+        //   {loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Sparkles className="mr-2 h-4 w-4" />}
+        //   {loading ? "Thinking" : "Break it down"}
+        // </Button>
