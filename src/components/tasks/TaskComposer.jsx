@@ -36,7 +36,7 @@ export const TaskComposer = ({ onGenerate, loading }) => {
         <Button
         onClick={submit} disabled={loading || !text.trim()}
         className="rounded-full px-6" />
-                { loading ? <Loader2 className='mr-2 h-4 w-4 animate-spin'/> : <Sparkles className='mr-2  '/>   }
+                { loading ? <Loader2 className='mr-2 h-4 w-4 animate-spin'/> : <Sparkles className='mr-2 h-4 w-4'/>}
 
 
       </div>
