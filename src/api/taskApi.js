@@ -1,42 +1,31 @@
 
-// const API_BASE_URL = 'https://your-backend.com';
-// const APP_ID = 'your-id-app';
-// const TOKEN = 'your-token-app';
+import axiosInstance from './axiosInstance';
 
-// export const apiClient = async(endpoint, options = {}) => {
-//     const url = `${API_BASE_URL}/{endpoint}`;
+export const getTasks = async () => {
+  const response = await axiosInstance.get('/tasks');
+  return response.data;
+};
 
-//     const headers = {
-//         'Content-Type': 'application/json',
-//         'X-App-Id': APP_ID,
-//         'Authorization': `Bearer ${TOKEN}`,
-//         ...options.headers,
-//     };
+export const getTask = async (id) => {
+  const response = await axiosInstance.get(`/tasks/${id}`);
+  return response.data;
+};
 
-//     const response = await fetch(url, {
-//         ...options,
-//         headers,
-//     });
+export const createTaskFromAI = async (title) => {
+  const response = await axiosInstance.post('/tasks/create_from_ai', { title });
+  return response.data;
+};
 
-//     if(!response.ok) {
-//         throw new Error(`HTTP error! status: ${ response.status }`);
-//     }
+export const updateTask = async (id, updates) => {
+  const response = await axiosInstance.patch(`/tasks/${id}`, { task: updates });
+  return response.data;
+};
 
-//     return response.json();
-// };
+export const deleteTask = async (id) => {
+  await axiosInstance.delete(`/tasks/${id}`);
+};
 
-
-import axios from "axios";
-
-const API_BASE_URL = "https://your-backend.com";
-const APP_ID = "your-app-id";
-const TOKEN = "your-token-auth";
-
-export const apiClient = axios.create({
-  baseURL: API_BASE_URL,
-  headers: {
-    "Content-Type": "application/json",
-    "X-App-Id": APP_ID,
-    Authorization: `Bearer ${TOKEN}`,
-  },
-});
+export const toggleSubtask = async (id) => {
+  const response = await axiosInstance.patch(`/subtasks/${id}/toggle`);
+  return response.data;
+};
