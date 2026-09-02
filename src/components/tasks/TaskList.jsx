@@ -1,10 +1,27 @@
 
-import React from 'react'
+import TaskCard from './TaskCard';
 
-const TaskList = () => {
+function TaskList({ tasks, onDelete, onToggleSubtask }) {
+  if (tasks.length === 0) {
+    return (
+      <p className="text-center text-gray-400 mt-12">
+        No tasks yet. Add one above to get started.
+      </p>
+    );
+  }
+
   return (
-    <div>TaskList</div>
-  )
+    <div>
+      {tasks.map((task) => (
+        <TaskCard
+          key={task.id}
+          task={task}
+          onDelete={onDelete}
+          onToggleSubtask={onToggleSubtask}
+        />
+      ))}
+    </div>
+  );
 }
 
-export default TaskList
+export default TaskList;
