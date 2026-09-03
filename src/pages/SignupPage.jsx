@@ -19,7 +19,7 @@ function SignupPage() {
 
     try {
       await signup(email, password, passwordConfirmation);
-      navigate('/');
+      navigate('/dashboard');
     } catch (err) {
       const errors = err.response?.data?.errors;
       setError(Array.isArray(errors) ? errors.join(', ') : 'Signup failed. Please try again.');
