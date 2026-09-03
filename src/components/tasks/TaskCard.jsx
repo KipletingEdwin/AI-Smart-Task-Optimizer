@@ -1,36 +1,44 @@
 
-import { Trash2 } from 'lucide-react';
+
+import { X } from 'lucide-react';
 import SubtaskItem from './SubTaskItem';
-// import SubtaskItem from './SubtaskItem';
+
 
 function TaskCard({ task, onDelete, onToggleSubtask }) {
   const totalMinutes = task.subtasks.reduce((sum, st) => sum + (st.estimated_minutes || 0), 0);
   const completedCount = task.subtasks.filter((st) => st.completed).length;
+  const hours = Math.floor(totalMinutes / 60);
+  const mins = totalMinutes % 60;
+  const timeLabel = hours > 0 ? `${hours}h ${mins}m` : `${mins}m`;
 
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-5 mb-4">
-      <div className="flex items-start justify-between mb-3">
-        <div>
-          <h3 className="font-semibold text-gray-900">{task.title}</h3>
-          <div className="flex items-center gap-2 mt-1">
-            <span className="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">
-              {task.category}
-            </span>
-            <span className="text-xs text-gray-400">
-              {completedCount}/{task.subtasks.length} done · {totalMinutes} min total
-            </span>
-          </div>
-        </div>
-        <button onClick={() => onDelete(task.id)} className="text-gray-400 hover:text-red-500">
-          <Trash2 size={18} />
+    <div className="border border-[var(--color-line)] rounded-sm p-6 mb-6 bg-white/40">
+      <div className="flex items-start justify-between mb-1">
+        <h3 className="text-lg font-semibold leading-snug pr-4">{task.title}</h3>
+        <button
+          onClick={() => onDelete(task.id)}
+          className="text-[var(--color-ink-muted)] hover:text-[var(--color-ember)] flex-shrink-0 mt-1"
+        >
+          <X size={16} />
         </button>
       </div>
 
+      <div className="flex items-center gap-3 mb-6 text-xs">
+        <span className="text-[var(--color-ember)] font-medium">{task.category}</span>
+        <span className="text-[var(--color-line)]">·</span>
+        <span className="font-mono text-[var(--color-ink-muted)] tabular-nums">
+          {completedCount}/{task.subtasks.length} done
+        </span>
+        <span className="text-[var(--color-line)]">·</span>
+        <span className="font-mono text-[var(--color-ink-muted)] tabular-nums">{timeLabel} total</span>
+      </div>
+
       <ul>
-        {task.subtasks.map((subtask) => (
+        {task.subtasks.map((subtask, index) => (
           <SubtaskItem
             key={subtask.id}
             subtask={subtask}
+            isLast={index === task.subtasks.length - 1}
             onToggle={() => onToggleSubtask(task.id, subtask.id)}
           />
         ))}

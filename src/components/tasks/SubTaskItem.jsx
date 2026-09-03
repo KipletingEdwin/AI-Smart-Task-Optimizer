@@ -1,23 +1,37 @@
 
 import { Check } from 'lucide-react';
 
-function SubtaskItem({ subtask, onToggle }) {
+function SubtaskItem({ subtask, isLast, onToggle }) {
   return (
-    <li className="flex items-center gap-3 py-2 border-b border-gray-100 last:border-0">
+    <li className="relative flex gap-4 pb-6 last:pb-0">
+      {!isLast && (
+        <span className="absolute left-2.25 top-6 bottom-0 w-px bg-line" />
+      )}
       <button
         onClick={onToggle}
-        className={`shrink-0 w-5 h-5 rounded border flex items-center justify-center transition-colors ${
+        className={`relative z-10 shrink-0 w-4.75 h-4.75 rounded-full border-2 flex items-center justify-center transition-colors ${
           subtask.completed
-            ? 'bg-green-500 border-green-500'
-            : 'border-gray-300 hover:border-blue-500'
+            ? 'bg-moss border-moss'
+            : 'border-line bg-paper hover:border-ember'
         }`}
       >
-        {subtask.completed && <Check size={14} className="text-white" />}
+        {subtask.completed && <Check size={12} className="text-white" strokeWidth={3} />}
       </button>
-      <span className={`flex-1 text-sm ${subtask.completed ? 'line-through text-gray-400' : 'text-gray-700'}`}>
-        {subtask.description}
-      </span>
-      <span className="text-xs text-gray-400 shrink-0">{subtask.estimated_minutes} min</span>
+
+      <div className="flex-1 flex items-baseline justify-between gap-3 -mt-0.5">
+        <span
+          className={
+            subtask.completed
+              ? 'text-ink-muted line-through decoration-line'
+              : 'text-ink'
+          }
+        >
+          {subtask.description}
+        </span>
+        <span className="font-mono text-xs text-ink-muted shrink-0 tabular-nums">
+          {subtask.estimated_minutes}m
+        </span>
+      </div>
     </li>
   );
 }

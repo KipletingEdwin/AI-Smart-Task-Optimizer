@@ -1,4 +1,4 @@
-
+// DashboardPage.jsx
 import { useAuth } from '../context/AuthContext';
 import { useTasks } from '../hooks/useTasks';
 import TaskInput from '../components/tasks/TaskInput';
@@ -10,28 +10,28 @@ function DashboardPage() {
   const { tasks, loading, creating, error, addTaskFromAI, removeTask, toggleTaskSubtask } = useTasks();
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white border-b border-gray-200">
-        <div className="max-w-2xl mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="text-xl font-bold text-gray-900">Task Optimizer</h1>
-          <div className="flex items-center gap-4">
-            <span className="text-sm text-gray-500">{user?.email}</span>
-            <button onClick={logout} className="text-gray-400 hover:text-red-500">
-              <LogOut size={18} />
+    <div className="min-h-screen">
+      <header className="border-b border-[var(--color-line)]">
+        <div className="max-w-xl mx-auto px-6 py-5 flex items-center justify-between">
+          <h1 className="font-semibold">Task Optimizer</h1>
+          <div className="flex items-center gap-4 text-sm">
+            <span className="text-[var(--color-ink-muted)]">{user?.email}</span>
+            <button onClick={logout} className="text-[var(--color-ink-muted)] hover:text-[var(--color-ember)]">
+              <LogOut size={16} />
             </button>
           </div>
         </div>
       </header>
 
-      <main className="max-w-2xl mx-auto px-4 py-8">
+      <main className="max-w-xl mx-auto px-6 py-12">
         <TaskInput onSubmit={addTaskFromAI} creating={creating} />
 
         {error && (
-          <div className="mb-4 p-3 bg-red-100 text-red-700 rounded text-sm">{error}</div>
+          <div className="mb-6 text-sm text-[var(--color-ember)]">{error}</div>
         )}
 
         {loading ? (
-          <p className="text-center text-gray-400 mt-12">Loading tasks...</p>
+          <p className="text-[var(--color-ink-muted)]">Loading tasks…</p>
         ) : (
           <TaskList tasks={tasks} onDelete={removeTask} onToggleSubtask={toggleTaskSubtask} />
         )}
