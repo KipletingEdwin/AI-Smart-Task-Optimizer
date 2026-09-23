@@ -6,7 +6,7 @@ The React frontend for [AI Smart Task Optimizer](#) — an AI-powered to-do app 
 > Type: *"I need to prepare for my Rails interview on Friday"*
 > Get back: a numbered, time-estimated plan you can check off as you go.
 
-API repo: [ai-smart-task-optimizer-server](#) *(update link once created)*
+API repo: [https://github.com/KipletingEdwin/AI-Smart-Task-Optimizer-Server]
 
 ## Tech stack
 
