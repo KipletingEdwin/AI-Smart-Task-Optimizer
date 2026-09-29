@@ -1,10 +1,11 @@
 
-import React from 'react'
-
-const Spinner = () => {
+function Spinner({ size = 16 }) {
   return (
-    <div>Spinner</div>
-  )
+    <span
+      className="inline-block border-2 border-current border-t-transparent rounded-full animate-spin"
+      style={{ width: size, height: size }}
+    />
+  );
 }
 
-export default Spinner
+export default Spinner;
