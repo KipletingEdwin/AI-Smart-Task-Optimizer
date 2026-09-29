@@ -1,9 +1,9 @@
 
+import TaskCard from "./TaskCard";
+import SkeletonTaskCard from "./SkeletonTaskCard";
 
-import TaskCard from './TaskCard';
-
-function TaskList({ tasks, onDelete, onToggleSubtask }) {
-  if (tasks.length === 0) {
+function TaskList({ tasks, creating, onDelete, onToggleSubtask }) {
+  if (tasks.length === 0 && !creating) {
     return (
       <div className="border border-dashed border-line rounded-sm py-16 text-center">
         <p className="text-ink-muted">Nothing planned yet.</p>
@@ -16,8 +16,14 @@ function TaskList({ tasks, onDelete, onToggleSubtask }) {
 
   return (
     <div>
+      {creating && <SkeletonTaskCard />}
       {tasks.map((task) => (
-        <TaskCard key={task.id} task={task} onDelete={onDelete} onToggleSubtask={onToggleSubtask} />
+        <TaskCard
+          key={task.id}
+          task={task}
+          onDelete={onDelete}
+          onToggleSubtask={onToggleSubtask}
+        />
       ))}
     </div>
   );
