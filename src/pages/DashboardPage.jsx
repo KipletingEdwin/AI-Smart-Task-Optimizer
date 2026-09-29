@@ -33,7 +33,11 @@ function DashboardPage() {
         {loading ? (
           <p className="text-ink-muted">Loading tasks…</p>
         ) : (
-          <TaskList tasks={tasks} onDelete={removeTask} onToggleSubtask={toggleTaskSubtask} />
+          <TaskList 
+          tasks={tasks}
+          creating={creating} 
+          onDelete={removeTask} 
+          onToggleSubtask={toggleTaskSubtask} />
         )}
       </main>
     </div>
