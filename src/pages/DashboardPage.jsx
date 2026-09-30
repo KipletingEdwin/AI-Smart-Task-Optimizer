@@ -4,10 +4,17 @@ import { useTasks } from '../hooks/useTasks';
 import TaskInput from '../components/tasks/TaskInput';
 import TaskList from '../components/tasks/TaskList';
 import { LogOut } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 function DashboardPage() {
   const { user, logout } = useAuth();
   const { tasks, loading, creating, error, addTaskFromAI, removeTask, toggleTaskSubtask } = useTasks();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    // navigate('/');
+  };
 
   return (
     <div className="min-h-screen">
@@ -16,7 +23,7 @@ function DashboardPage() {
           <h1 className="font-semibold">Task Optimizer</h1>
           <div className="flex items-center gap-4 text-sm">
             <span className="text-ink-muted">{user?.email}</span>
-            <button onClick={logout} className="text-ink-muted hover:text-ember">
+            <button onClick={handleLogout} className="text-ink-muted hover:text-ember">
               <LogOut size={16} />
             </button>
           </div>
@@ -33,11 +40,7 @@ function DashboardPage() {
         {loading ? (
           <p className="text-ink-muted">Loading tasks…</p>
         ) : (
-          <TaskList 
-          tasks={tasks}
-          creating={creating} 
-          onDelete={removeTask} 
-          onToggleSubtask={toggleTaskSubtask} />
+          <TaskList tasks={tasks} creating={creating} onDelete={removeTask} onToggleSubtask={toggleTaskSubtask} />
         )}
       </main>
     </div>
