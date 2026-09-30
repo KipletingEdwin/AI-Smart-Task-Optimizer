@@ -13,7 +13,7 @@ function DashboardPage() {
 
   const handleLogout = () => {
     logout();
-    // navigate('/');
+    navigate('/signup');
   };
 
   return (
@@ -23,7 +23,7 @@ function DashboardPage() {
           <h1 className="font-semibold">Task Optimizer</h1>
           <div className="flex items-center gap-4 text-sm">
             <span className="text-ink-muted">{user?.email}</span>
-            <button onClick={handleLogout} className="text-ink-muted hover:text-ember">
+            <button onClick={handleLogout} className="text-ink-muted hover:text-ember cursor-pointer">
               <LogOut size={16} />
             </button>
           </div>
