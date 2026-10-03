@@ -1,11 +1,10 @@
 
-
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Manrope:wght@200..800&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-paper: #FAF9F5;
-  --color-ink: #22221F;
+  --color-paper: #0F172A;
+  --color-ink: #FFFFFF;
   --color-ink-muted: #83817A;
   --color-ember: #C4622D;
   --color-ember-soft: #F3E2D6;
@@ -21,6 +20,40 @@ body {
   background-color: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-sans);
+  overflow: hidden;
+}
+
+@layer utilities {
+  .accent-glow {
+    box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.4), 0 0 24px 4px rgba(99, 102, 241, 0.15);
+  }
+
+  /* Clean, scannable background grid mask */
+  .tech-grid-bg {
+    background-image:
+      linear-gradient(to right, rgba(30, 41, 59, 0.4) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(30, 41, 59, 0.4) 1px, transparent 1px);
+    background-size: 4rem 4rem;
+    mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000000 70%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000000 70%, transparent 100%);
+  }
+
+  /* Micro-interactions: Smooth high-tech border glowing on interactive components */
+  .glow-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(30, 41, 59, 0.8);
+  }
+
+  .glow-card:hover {
+    border-color: rgba(0, 210, 255, 0.5);
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.15);
+    transform: translateY(-2px);
+  }
+
+  /* Soft, interactive emerald glow for submission points and highlights */
+  .glow-emerald:hover {
+    box-shadow: 0 0 15px rgba(5, 243, 162, 0.3);
+  }
 }
 
 
@@ -32,6 +65,7 @@ body {
     opacity: 0;
     transform: translateY(6px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

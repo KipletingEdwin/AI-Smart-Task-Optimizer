@@ -1,3 +1,4 @@
+
 import { createContext, useContext, useState, useEffect } from "react";
 import { login as apiLogin, signup as apiSignup } from "../api/authApi";
 import { authState } from '../api/axiosInstance';
@@ -57,3 +58,5 @@ export function useAuth() {
   }
   return context;
 }
+
+

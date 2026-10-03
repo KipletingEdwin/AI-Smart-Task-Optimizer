@@ -65,7 +65,7 @@ function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full flex items-center justify-center gap-2 bg-ink text-paper py-2 rounded-sm hover:bg-ember transition-colors disabled:opacity-60"
+              className="cursor-pointer w-full flex items-center justify-center gap-2 bg-ink text-paper py-2 rounded-sm hover:bg-ember transition-colors disabled:opacity-60"
             >
               {loading && <Spinner size={14} />}
               {loading ? 'Logging in…' : 'Log In'}

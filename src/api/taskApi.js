@@ -1,8 +1,8 @@
 
-import axiosInstance from './axiosInstance';
+import axiosInstance from "./axiosInstance";
 
 export const getTasks = async () => {
-  const response = await axiosInstance.get('/tasks');
+  const response = await axiosInstance.get("/tasks");
   return response.data;
 };
 
@@ -12,7 +12,7 @@ export const getTask = async (id) => {
 };
 
 export const createTaskFromAI = async (title) => {
-  const response = await axiosInstance.post('/tasks/create_from_ai', { title });
+  const response = await axiosInstance.post("/tasks/create_from_ai", { title });
   return response.data;
 };
 
