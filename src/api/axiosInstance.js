@@ -5,6 +5,8 @@ const axiosInstance = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
 });
 
+export const authState = { loggingOut: false };
+
 axiosInstance.interceptors.request.use((config) => {
   const token = localStorage.getItem('authToken');
   if (token) {
@@ -16,7 +18,7 @@ axiosInstance.interceptors.request.use((config) => {
 axiosInstance.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error.response?.status === 401) {
+    if (error.response?.status === 401 && !authState.loggingOut) {
       localStorage.removeItem('authToken');
       window.location.href = '/login';
     }
