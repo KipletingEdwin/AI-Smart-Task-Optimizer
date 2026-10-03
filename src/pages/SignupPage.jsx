@@ -4,8 +4,8 @@ import { Link, useNavigate } from "react-router";
 import { useAuth } from "../context/AuthContext";
 import Spinner from "../components/ui/Spinner";
 
-
 function SignupPage() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
@@ -20,7 +20,7 @@ function SignupPage() {
     setLoading(true);
 
     try {
-      await signup(email, password, passwordConfirmation);
+      await signup(email, password, passwordConfirmation, name);
       navigate("/dashboard");
     } catch (err) {
       const errors = err.response?.data?.errors;
@@ -35,7 +35,7 @@ function SignupPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-paper">
-      <div className="w-full max-w-sm bg-white p-8 rounded-sm border border-line">
+      <div className="w-full max-w-sm p-8 rounded-sm border border-line">
         <h1 className="text-2xl font-semibold mb-6 text-center">Sign Up</h1>
 
         {error && (
@@ -46,6 +46,16 @@ function SignupPage() {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <fieldset disabled={loading} className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium mb-1">Name</label>
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                className="w-full px-3 py-2 border border-line rounded-sm focus:outline-none focus:ring-2 focus:ring-ember disabled:opacity-50"
+              />
+            </div>
             <div>
               <label className="block text-sm font-medium mb-1">Email</label>
               <input

@@ -1,7 +1,7 @@
 
 import { createContext, useContext, useState, useEffect } from "react";
 import { login as apiLogin, signup as apiSignup } from "../api/authApi";
-import { authState } from '../api/axiosInstance';
+import { authState } from "../api/axiosInstance";
 
 const AuthContext = createContext(null);
 
@@ -26,8 +26,8 @@ export function AuthProvider({ children }) {
     return data;
   };
 
-  const signup = async (email, password, passwordConfirmation) => {
-    const data = await apiSignup(email, password, passwordConfirmation);
+  const signup = async (email, password, passwordConfirmation, name) => {
+    const data = await apiSignup(email, password, passwordConfirmation, name);
     localStorage.setItem("authToken", data.token);
     localStorage.setItem("authUser", JSON.stringify(data.user));
     setUser(data.user);
@@ -58,5 +58,3 @@ export function useAuth() {
   }
   return context;
 }
-
-

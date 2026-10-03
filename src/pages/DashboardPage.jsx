@@ -22,7 +22,7 @@ function DashboardPage() {
         <div className=" mx-auto py-5 flex items-center justify-between">
           <button className='flex items-center justify-center gap-1'><Sparkles className='w-4 h-4'/>Task Optimizer</button>
           <div className="flex items-center gap-4 text-sm">
-            <span>{user?.email}</span>
+            <span>{user?.name}</span>
             <button onClick={handleLogout} className="hover:text-ember cursor-pointer flex items-center gap-1 border px-2 py-1 rounded-xl ">
               Logout
               <LogOut size={16} />
