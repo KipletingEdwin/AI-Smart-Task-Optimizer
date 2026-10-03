@@ -4,7 +4,7 @@ import { useTasks } from '../hooks/useTasks';
 import TaskInput from '../components/tasks/TaskInput';
 import TaskList from '../components/tasks/TaskList';
 import { LogOut } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 
 function DashboardPage() {
   const { user, logout } = useAuth();
