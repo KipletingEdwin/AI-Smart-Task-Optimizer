@@ -29,7 +29,7 @@ function DemoPreview() {
   }, []);
 
   return (
-    <div className="border border-line rounded-sm p-6 bg-white/60">
+    <div className="border border-line rounded-sm p-6">
       <div className="flex items-center gap-3 border-b-2 border-ink pb-3 mb-6">
         <span className="flex-1 text-lg">
           {typed}

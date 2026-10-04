@@ -12,7 +12,7 @@ function HomePage() {
   return (
     <div className="min-h-screen">
       <header className="border-b border-line">
-        <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+        <div className="mx-auto px-6 py-5 flex items-center justify-between">
           <span className="font-semibold">Task Optimizer</span>
           <div className="flex items-center gap-5 text-sm">
             <Link to="/login" className="text-ink-muted hover:text-ink">
@@ -28,7 +28,7 @@ function HomePage() {
         </div>
       </header>
 
-      <main className="max-w-6xl mx-auto px-6 py-20">
+      <main className="mx-auto px-6 py-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <h1 className="text-4xl md:text-5xl font-semibold leading-tight max-w-md mb-5">
@@ -48,7 +48,7 @@ function HomePage() {
           <DemoPreview />
         </div>
 
-        <div className="mt-28 grid md:grid-cols-3 gap-8 max-w-4xl">
+        <div className="mt-28 grid md:grid-cols-3 gap-8">
           {STEPS.map((step, index) => (
             <div key={step.title} className="flex gap-3">
               <span className="font-mono text-sm text-ember shrink-0">
@@ -61,6 +61,7 @@ function HomePage() {
             </div>
           ))}
         </div>
+        
       </main>
     </div>
   );

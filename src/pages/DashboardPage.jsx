@@ -17,9 +17,9 @@ function DashboardPage() {
   };
 
   return (
-    <div className="min-h-screen px-20">
+    <div className="min-h-screen">
       <header className="border-b border-line">
-        <div className=" mx-auto py-5 flex items-center justify-between">
+        <div className="px-10 py-5 flex items-center justify-between">
           <button className='flex items-center justify-center gap-1'><Sparkles className='w-4 h-4'/>Task Optimizer</button>
           <div className="flex items-center gap-4 text-sm">
             <span>{user?.name}</span>

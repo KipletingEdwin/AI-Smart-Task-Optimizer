@@ -29,7 +29,7 @@ function LoginPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-paper">
-      <div className="w-full max-w-sm bg-white p-8 rounded-sm border border-line">
+      <div className="w-full max-w-sm p-8 rounded-sm border border-line">
         <h1 className="text-2xl font-semibold mb-6 text-center">Log In</h1>
 
         {error && (

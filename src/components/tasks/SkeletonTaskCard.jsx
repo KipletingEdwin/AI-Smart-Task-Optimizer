@@ -3,7 +3,7 @@ function SkeletonTaskCard() {
   const rows = [70, 55, 80, 45];
 
   return (
-    <div className="border border-line rounded-sm p-6 mb-6 bg-white/40 animate-pulse">
+    <div className="border border-line rounded-sm p-6 mb-6 animate-pulse">
       <div className="h-5 w-2/3 bg-line rounded-sm mb-3" />
 
       <div className="flex items-center gap-3 mb-6">

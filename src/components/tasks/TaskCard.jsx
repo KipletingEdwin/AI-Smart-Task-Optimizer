@@ -12,14 +12,14 @@ function TaskCard({ task, onDelete, onToggleSubtask }) {
   const timeLabel = hours > 0 ? `${hours}h ${mins}m` : `${mins}m`;
 
   return (
-    <div className="border border-line rounded-sm p-6 mb-6 bg-white/40">
+    <div className="border border-line rounded-sm p-6 mb-6">
       <div className="flex items-start justify-between mb-1">
         <h3 className="text-lg font-semibold leading-snug pr-4">{task.title}</h3>
         <button
           onClick={() => onDelete(task.id)}
           className="text-ink-muted hover:text-ember shrink-0 mt-1"
         >
-          <X size={16} />
+          <X size={16} className='cursor-pointer'/>
         </button>
       </div>
 
