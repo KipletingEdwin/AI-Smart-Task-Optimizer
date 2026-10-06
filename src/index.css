@@ -12,15 +12,14 @@
   --color-moss: #57735A;
   --color-moss-soft: #E3EAE1;
 
-  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-manrope: "Manrope", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
 body {
   background-color: var(--color-paper);
   color: var(--color-ink);
-  font-family: var(--font-sans);
-  overflow: hidden;
+  font-family: var(--font-manrope);
 }
 
 @layer utilities {

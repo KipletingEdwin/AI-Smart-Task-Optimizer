@@ -12,12 +12,12 @@ function TaskInput({ onSubmit, creating }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mb-10">
+    <form onSubmit={handleSubmit} className="mb-10 px-10 ">
       {/* <div className='px-10' >  */}
-      <label className="block text-sm mb-2 px-10">
+      <label className="block text-sm mb-2">
         What do you need to get done?
       </label>
-      <div className="flex items-center gap-3 border-b-2 border-ink pb-3 focus-within:border-ember transition-colors px-10">
+      <div className="flex items-center gap-3 border-b-2 border-ink pb-3 focus-within:border-ember transition-colors">
         <input
           type="text"
           value={title}

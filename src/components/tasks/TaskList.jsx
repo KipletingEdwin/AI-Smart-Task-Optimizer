@@ -15,7 +15,7 @@ function TaskList({ tasks, creating, onDelete, onToggleSubtask }) {
   }
 
   return (
-    <div>
+    <div className="px-10">
       {creating && <SkeletonTaskCard />}
       {tasks.map((task) => (
         <TaskCard
